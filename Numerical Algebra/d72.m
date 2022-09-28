@@ -1,0 +1,9 @@
+clc;clear;
+a1=diag(2*ones(100,1));
+a2=diag(-ones(99,1),1);
+a3=diag(-ones(99,1),-1);
+a=a1+a2+a3;
+m=1;
+[y1,x1]=twofenfa(a,m);
+m=100;
+[y2,x2]=twofenfa(a,m);

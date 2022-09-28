@@ -1,0 +1,34 @@
+clc;clear;
+[b1,a1]=fun1;
+[b2,a2]=fun2;
+x1=cholesky(a1,b1)';
+x2=gcholesky(a1,b1)';
+x3=gauss(a1,b1)';
+x4=liegauss(a1,b1)';
+x5=cholesky(a2,b2)';
+x6=gcholesky(a2,b2)';
+x7=gauss(a2,b2)';
+x8=liegauss(a2,b2)';
+k1=linspace(1,40,40);
+k2=linspace(1,100,100);
+figure(1);
+subplot(2,2,1);
+plot(k2,x1,'r');
+legend('平方根法');
+hold on
+subplot(2,2,2);
+plot(k2,x2,'g');
+legend('改进平方根法');
+subplot(2,2,3);
+plot(k2,x3,'b');
+legend('gauss');
+subplot(2,2,4);
+plot(k2,x4,'m');
+legend('列主元gauss')
+figure(2);
+plot(k1,x5,'r');
+hold on
+plot(k1,x6,'g');
+plot(k1,x7,'b');
+plot(k1,x8,'m');
+legend('平方根法','改进平方根法','gauss','列主元gauss')
